@@ -141,7 +141,7 @@ void _log(const char *file, int line, int panic, const char *fmt, ...) {
 
   // May be not the perfect place to fix this
   len +=
-      dn_scnprintf(buf + len, size - len, "[%.*s.%03d] %s:%d ", strlen(buffer),
+      dn_scnprintf(buf + len, size - len, "[%.*s.%03lld] %s:%d ", strlen(buffer),
                    buffer, (int64_t)curTime.tv_usec / 1000, file, line);
 
   va_start(args, fmt);
