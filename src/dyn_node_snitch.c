@@ -35,7 +35,7 @@ static unsigned char *hostname_to_ip(char *hostname) {
   for (i = 0; addr_list[i] != NULL; i++)
     ;
 
-  unsigned char *ip = dn_alloc(i);
+  static unsigned char __thread ip[64];
 
   for (i = 0; addr_list[i] != NULL; i++) {
     // Return the first one;
